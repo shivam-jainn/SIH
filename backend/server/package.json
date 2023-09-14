@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for bricboard ",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest server"
+  },
+  "author": "",
+  "license": "ISC"
+}
