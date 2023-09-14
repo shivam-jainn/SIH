@@ -1,7 +1,7 @@
 import json
 from faker import Faker
 import random
-import pandas as pd
+import os
 
 # Initialize Faker
 fake = Faker()
@@ -29,8 +29,13 @@ for _ in range(1000):  # You can adjust the number of data points as needed
     machine_temperature = round(random.uniform(*temp_range), 2)
     soundwave = round(random.uniform(*sound_range), 2)
     vibration = round(random.uniform(*vibration_range), 2)
-    environment_temperature = round(random.uniform(20, 30), 2)
+    environment_temperature = round(random.uniform(20,30), 2)
     humidity = round(random.uniform(30, 60), 2)
+
+    # Define conditions for anomalies for each attribute based on the machine's range
+    temp_anomaly = 0 if machine_temperature < temp_range[0] or machine_temperature > temp_range[1] else 1
+    sound_anomaly = 0 if soundwave < sound_range[0] or soundwave > sound_range[1] else 1
+    vibration_anomaly = 0 if vibration < vibration_range[0] or vibration > vibration_range[1] else 1
 
     data.append({
         "Machine_ID": machine_id,
@@ -39,12 +44,20 @@ for _ in range(1000):  # You can adjust the number of data points as needed
         "Soundwave_dB": soundwave,
         "Vibration_mm/s^2": vibration,
         "Environment_Temperature_C": environment_temperature,
-        "Humidity_%": humidity
+        "Humidity_%": humidity,
+        "Temp_Anomaly": temp_anomaly,
+        "Sound_Anomaly": sound_anomaly,
+        "Vibration_Anomaly": vibration_anomaly,
     })
 
-# Save the data as a JSON file
-with open("../datasets/machine_environment_data.json", "w") as json_file:
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+json_file_path = os.path.join(script_dir, "..", "datasets", "machine_environment_data.json")
+
+with open(json_file_path, "w") as json_file:
     json.dump(data, json_file, indent=4)
+
 
 # Display the first few data points
 print(data[:5])
