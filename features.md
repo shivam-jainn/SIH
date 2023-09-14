@@ -1,17 +1,14 @@
 # manager view
-safety card , cement card , transportation card
 
+personel section:
+status card: cool line line card
+safety card: ,
+attendance : PIE CHART
 
-transportation card : 1) ETA 2) Issues 3) Accident/Emergency 
+resource section:
+transportation card : 1) ETA 2) Issues 3) Accident/Emergency
+machine status carasoeul
 
-
-\ attendance : PIE CHART
-
-
-\  
+\
 
 # IOT section
-
-
-
-
