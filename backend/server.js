@@ -19,8 +19,27 @@ io.on("connection", function (socket) {
     console.log("Made socket connection");
 
 
+    socket.on("iot", function (data) {
+        // socket.to("commonroom").emit("iot",data);
+        socket.broadcast.emit("iot",data);
+        console.log(data);
+    });
+
+    socket.on("admin",(data)=>{
+        socket.join("commonroom");
+    })
+
+
+
     socket.on("message", function (data) {
-        console.log(data)
+        console.log(data);
     });
 
 });
+
+
+io.on("addExtension",(socket,deviceid)=>{
+    console.log("joined dashboard");
+    console.log(deviceid);
+    io.join("dashboard");
+})
