@@ -9,16 +9,28 @@ fake = Faker()
 # Create an empty list to store the data
 data = []
 
-# Generate synthetic data with a constant Machine ID
-machine_id = "A_001"  # Replace with your desired Machine ID
+# Define the machines and their characteristics
+machines = [
+    {"Machine_ID": "A_001", "TempRange": (50, 100), "SoundRange": (30, 100), "VibrationRange": (0, 2)},
+    {"Machine_ID": "B_002", "TempRange": (40, 90), "SoundRange": (20, 90), "VibrationRange": (0, 1)},
+    {"Machine_ID": "C_003", "TempRange": (60, 110), "SoundRange": (40, 120), "VibrationRange": (1, 3)},
+    {"Machine_ID": "D_004", "TempRange": (45, 95), "SoundRange": (25, 85), "VibrationRange": (0, 1.5)},
+    {"Machine_ID": "E_005", "TempRange": (55, 105), "SoundRange": (35, 110), "VibrationRange": (0.5, 2.5)}
+]
 
 for _ in range(1000):  # You can adjust the number of data points as needed
+    machine = random.choice(machines)
+    machine_id = machine["Machine_ID"]
+    temp_range = machine["TempRange"]
+    sound_range = machine["SoundRange"]
+    vibration_range = machine["VibrationRange"]
+
     timestamp = fake.date_time_between(start_date="-1d", end_date="now")
-    machine_temperature = round(random.uniform(50, 100), 2)  # Machine temperature in Celsius
-    soundwave = round(random.uniform(30, 100), 2)  # Soundwave intensity in dB
-    vibration = round(random.uniform(0, 2), 2)  # Vibration intensity in mm/s^2
-    environment_temperature = round(random.uniform(20, 30), 2)  # Environment temperature in Celsius
-    humidity = round(random.uniform(30, 60), 2)  # Relative humidity in percentage
+    machine_temperature = round(random.uniform(*temp_range), 2)
+    soundwave = round(random.uniform(*sound_range), 2)
+    vibration = round(random.uniform(*vibration_range), 2)
+    environment_temperature = round(random.uniform(20, 30), 2)
+    humidity = round(random.uniform(30, 60), 2)
 
     data.append({
         "Machine_ID": machine_id,
