@@ -33,9 +33,9 @@ for _ in range(1000):  # You can adjust the number of data points as needed
     humidity = round(random.uniform(30, 60), 2)
 
     # Define conditions for anomalies for each attribute based on the machine's range
-    temp_anomaly = 0 if machine_temperature < temp_range[0] or machine_temperature > temp_range[1] else 1
-    sound_anomaly = 0 if soundwave < sound_range[0] or soundwave > sound_range[1] else 1
-    vibration_anomaly = 0 if vibration < vibration_range[0] or vibration > vibration_range[1] else 1
+    temp_anomaly = -1 if machine_temperature < temp_range[0] or machine_temperature > temp_range[1] else 1
+    sound_anomaly = -1 if soundwave < sound_range[0] or soundwave > sound_range[1] else 1
+    vibration_anomaly = -1 if vibration < vibration_range[0] or vibration > vibration_range[1] else 1
 
     data.append({
         "Machine_ID": machine_id,

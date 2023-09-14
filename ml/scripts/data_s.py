@@ -1,7 +1,6 @@
 import json
 from faker import Faker
 import random
-import pandas as pd
 import os
 
 # Initialize Faker
@@ -30,9 +29,9 @@ for _ in range(14):  # You can adjust the number of data points as needed
 
     # Define your anomaly detection logic here
     # For example, if machine temperature is above 90, consider it an anomaly
-    temp_anomaly = 1 if machine_temperature > 100 else 0
-    sound_anomaly = 1 if machine_temperature > 90 else 0
-    vibration_anomaly = 1 if machine_temperature > 2 else 0
+    temp_anomaly = -1 if machine_temperature > 100 else 1
+    sound_anomaly = -1 if machine_temperature > 90 else 1
+    vibration_anomaly = -1 if machine_temperature > 2 else 1
 
 
 
