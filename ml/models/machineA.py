@@ -1,4 +1,3 @@
-
 import json
 import numpy as np
 from sklearn.ensemble import IsolationForest
@@ -20,26 +19,36 @@ else:
 
 # Extract the temperature values from the JSON data
 temperature_values = [entry['Machine_Temperature_C'] for entry in data]
+anomalies = [entry['Temp_Anomaly'] for entry in data]
 
 # Convert the temperature values to a NumPy array and reshape it for Isolation Forest
 temperature_values = np.array(temperature_values).reshape(-1, 1)
+anomalies = np.array(anomalies)
 
 # Split data into training and testing sets
-X_train, X_test = train_test_split(temperature_values, test_size=0.2, random_state=42)
+X = temperature_values  # Features
+y = anomalies
+contamination = 0.05     # Define the contamination rate (proportion of anomalies)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# print(X_train)
+# print(X_test)
+# print(y_train)
+print(y_test)
 
 # Initialize the Isolation Forest model with tuned parameters
-isolation_forest = IsolationForest(contamination=0.05, random_state=42, n_estimators=100)
+isolation_forest = IsolationForest(contamination=contamination, random_state=42, n_estimators=100)
 
 # Fit the model to the training data
 isolation_forest.fit(X_train)
 
 # Predict anomalies (1 for normal, -1 for anomaly) on the test data
-predictions = isolation_forest.predict(X_test)
+y_pred = isolation_forest.predict(X_test)
 
 # Visualize the results
 plt.figure(figsize=(12, 6))
-plt.plot(range(len(data)), temperature_values, label='Temperature')
-plt.scatter(np.where(predictions == -1)[0], X_test[predictions == -1], color='red', label='Anomalies')
+plt.plot(range(len(X)), temperature_values, label='Temperature')
+plt.scatter(np.where(y_pred == -1)[0], X_test[y_pred == -1], color='red', label='Anomalies')
 plt.xlabel('Index (or Timestamp)')
 plt.ylabel('Temperature')
 plt.title('Temperature Anomaly Detection using Isolation Forest')
@@ -48,10 +57,11 @@ plt.grid(True)
 plt.show()
 
 # Evaluation (optional)
-true_labels = np.ones(len(X_test))  # Assuming all test data is normal
-true_labels[predictions == -1] = -1  # Assign true labels to anomalies
+true_labels = np.zeros(len(X_test))  # All labeled as normal
+true_labels[y_pred == -1] = -1   # Assign true labels to anomalies
 print("Confusion Matrix:")
-print(confusion_matrix(true_labels, predictions))
-print("\nClassification Report:")
-print(classification_report(true_labels, predictions))
+print(confusion_matrix(y_test, y_pred))
 
+print(y_pred)
+# print("\nClassification Report:")
+# print(classification_report(true_labels, y_pred))
