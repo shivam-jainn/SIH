@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 faker = "*"
+scikit-learn = "*"
+matplotlib = "*"
+numpy = "*"
 
 [dev-packages]
 
