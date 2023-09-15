@@ -15,6 +15,7 @@ function removeDeviceFromRoom(socket, roomName, deviceId) {
       (room) => room !== roomName
     );
   }
+}
 
   function handleSocketConnection(socket) {
     if (socket.handshake.headers.isdevice == 1) {
@@ -49,6 +50,6 @@ function removeDeviceFromRoom(socket, roomName, deviceId) {
       console.log(data);
     });
   }
-}
+
 
 module.exports = { handleSocketConnection };
