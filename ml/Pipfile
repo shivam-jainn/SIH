@@ -8,6 +8,7 @@ faker = "*"
 scikit-learn = "*"
 matplotlib = "*"
 numpy = "*"
+tensorflow = "*"
 
 [dev-packages]
 
