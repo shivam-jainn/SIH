@@ -11,7 +11,12 @@ server.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
 });
 
+app.use(express.json());
+
+
 app.use(express.static("public"));
+
+app.use("/auth", require("./routes/user.routes"));
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
