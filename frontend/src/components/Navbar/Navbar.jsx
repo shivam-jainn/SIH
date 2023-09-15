@@ -2,12 +2,13 @@ import React from "react";
 // import { HiOutlineBell, HiOutlineUserCircle } from "react-icons/hi";
 import {BsFillPersonFill} from "react-icons/bs";
 import {AiOutlineBell} from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   return (
     <div className="w-[100%] px-[3%] py-[2%] flex justify-between items-center bg-slate-200 h-[50px] drop-shadow-md sticky top-0 z-50">
       <div className="logo text-3xl font-light">
-        <a href="#">BricBoard</a>
+        <Link to="/">BricBoard</Link>
       </div>
       <div className="flex items-center justify-evenly gap-10">
         {/* <div id="navLinks">
