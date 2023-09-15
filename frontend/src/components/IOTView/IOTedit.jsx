@@ -1,12 +1,22 @@
-import { Title, Bold, Card, Button, Subtitle } from "@tremor/react";
+import {
+  Bold,
+  Button,
+  Card,
+  Metric,
+  Select,
+  SelectItem,
+  Subtitle,
+  Title,
+} from "@tremor/react";
 import React from "react";
-import { Select, SelectItem } from "@tremor/react";
+import NavBar from "../Navbar/Navbar";
 
 const IOTedit = () => {
   return (
     <>
-      <main>
-        <Title>Edit Project</Title>
+      <NavBar />
+      <main className=" m-10">
+        <Metric className="my-5">Edit Project</Metric>
 
         <div className="border p-0 md:p-6 bg-slate-50">
           <div>
@@ -42,22 +52,13 @@ const IOTedit = () => {
             </div>
           </Card>
 
-
-        <Card>
-        <Select>
-        <SelectItem value="1" >
-          Up time components
-        </SelectItem>
-        <SelectItem value="2" >
-          Bar Chart Components
-        </SelectItem>
-        <SelectItem value="3" >
-          Scatter Charts Components
-        </SelectItem>
-        <SelectItem value="4" >
-          Line Graph Components
-        </SelectItem>
-      </Select>
+          <Card>
+            <Select>
+              <SelectItem value="1">Up time components</SelectItem>
+              <SelectItem value="2">Bar Chart Components</SelectItem>
+              <SelectItem value="3">Scatter Charts Components</SelectItem>
+              <SelectItem value="4">Line Graph Components</SelectItem>
+            </Select>
           </Card>
         </div>
       </main>
