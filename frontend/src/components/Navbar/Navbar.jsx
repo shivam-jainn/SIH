@@ -3,12 +3,12 @@ import { HiOutlineBell, HiOutlineUserCircle } from "react-icons/hi";
 
 const NavBar = (props) => {
   return (
-    <div className="w-[100%] px-[3%] flex justify-between items-center bg-slate-200 h-[50px] drop-shadow-md sticky top-0 z-50">
+    <div className="w-[100%] px-[3%] py-[2%] flex justify-between items-center bg-slate-200 h-[50px] drop-shadow-md sticky top-0 z-50">
       <div className="logo text-3xl font-light">
-        <a href="#">BricBoard</a>
+        <a href="#" >BricBoard</a>
       </div>
       <div className="flex items-center justify-evenly gap-10">
-        <div id="navLinks">
+        {/* <div id="navLinks">
           <a className="mx-3 hover:text-[#4E80EE]" href="">
             Link1
           </a>
@@ -18,7 +18,7 @@ const NavBar = (props) => {
           <a className="mx-3 hover:text-[#4E80EE]" href="">
             Link3
           </a>
-        </div>
+        </div> */}
         <div className="flex gap-6 text-3xl 	">
           <a href="">
             {" "}
