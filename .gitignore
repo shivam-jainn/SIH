@@ -1,0 +1,66 @@
+# Dependency directories
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Built files
+build/
+frontend/build/
+backend/build/
+
+# Logs and debugging files
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# IDE and code editor configuration files
+*.iml
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Compiled binary files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Yarn
+yarn-error.log
+
+# Custom build output (if any)
+custom-build-output/
+
+# Backend-specific files (e.g., Express.js)
+backend/.env
+backend/.env.local
+
+# Socket.io
+socket.io/socket.io.js
+
+# Frontend-specific files (e.g., React.js)
+frontend/.env
+frontend/.env.local
