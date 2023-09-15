@@ -75,25 +75,25 @@ export default function IOTMain() {
                     </Link>
                   </Card>
 
-                  <Card className="">
-                    <div>
-                      <Title>
-                        <Bold>Add more devices</Bold>{" "}
-                      </Title>
-                      <p>
-                        Add iot devices as per the project needs . Happy
-                        customising :)
-                      </p>
-                    </div>
+                  <Card>
+  <div className="text-center">
+    <Title className="text-xl font-semibold">
+      <Bold>Expand Your Inventory</Bold>
+    </Title>
+    <p className="text-gray-600 mt-2">
+      Add IoT devices to meet your project's requirements. Start customizing!
+    </p>
+  </div>
 
-                    <div className="relative h-[100%] my-5 border-1 border-dashed border-blue-400">
-                      <Link to="/iot/iotEdit">
-                        <Card className="flex  justify-center align-middle  ">
-                          Add Device . Click Here
-                        </Card>
-                      </Link>
-                    </div>
-                  </Card>
+  <div className="relative mt-5 border-1 border-dashed border-blue-400">
+    <Link to="/iot/iotEdit">
+      <Card className="flex justify-center items-center cursor-pointer transform hover:scale-105 transition-transform">
+        <span className="text-4xl text-blue-500 mr-2">+</span>
+      </Card>
+    </Link>
+  </div>
+</Card>
+
                 </Grid>
               </TabPanel>
               <TabPanel>
