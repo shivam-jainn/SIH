@@ -13,8 +13,8 @@ function App() {
       <NavBar />
       <div className=" px-2 md:p-16 ">
         {/* <ClientMain /> */}
-        {/* <IOTMain /> */}
-        <ClientMain />
+        <IOTMain />
+        {/* <ClientMain /> */}
 
         {/* <IOTinventory /> */}
       </div>
