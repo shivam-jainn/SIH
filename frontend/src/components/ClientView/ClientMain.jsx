@@ -14,6 +14,9 @@ import {
 } from "@tremor/react";
 
 import { SearchSelect, SearchSelectItem } from "@tremor/react";
+import Attendence from "./Cards/Attendence/Attendence";
+import ExpenditureOverview from "./Cards/ExpenditureOverview";
+import ProjectDetails from "./Cards/ProjectDetails";
 import Chart from "./Chart";
 
 export default function ClientMain() {
@@ -42,15 +45,16 @@ export default function ClientMain() {
             <TabPanel>
               <Grid numItemsMd={2} numItemsLg={3} className="gap-6 mt-6">
                 <Card>
-                  <Chart />
+                  <ProjectDetails />
                 </Card>
                 <Card>
                   {/* Placeholder to set height */}
-                  <div className="h-28" />
+                  <ExpenditureOverview />
                 </Card>
                 <Card>
                   {/* Placeholder to set height */}
-                  <div className="h-28" />
+                  <Title>Attendence:</Title>
+                  <Attendence />
                 </Card>
               </Grid>
               <div className="mt-6">
