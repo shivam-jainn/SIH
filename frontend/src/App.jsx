@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="p-16 ">
+    <div className=" px-2 md:p-16 ">
       <ClientMain />
     </div>
   );
