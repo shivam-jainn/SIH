@@ -9,8 +9,14 @@ const LandingPage = (props) => {
       <nav className="flex justify-between items-center px-[5%] h-[70px] border-b border-solid border-gray-300">
         <div className="text-3xl ">BricBoard</div>
         <div>
-          <Link to="/login">
+          <Link to="/auth/register">
             <Button variant="secondary" size="sm">
+              Register
+            </Button>
+          </Link>
+
+          <Link to="/auth/login">
+            <Button className="mx-2" size="sm">
               Log In
             </Button>
           </Link>
