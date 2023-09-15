@@ -11,9 +11,9 @@ import { Route, Routes } from "react-router-dom";
 import IOTedit from "./components/IOTView/IOTedit";
 import IOTinventory from "./components/IOTView/IOTinventory";
 import LandingPage from "./components/LandingView/LandingPage";
-import Login from "./components/LoginView/Login";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
 function App() {
-  const [count, setCount] = useState(0);
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -25,6 +25,10 @@ function App() {
         <Route path="iotInventory" element={<IOTinventory />} />
       </Route>
       <Route path="/admin" element={<AdminMain />} />
+      <Route path="/auth">
+        <Route path="register" element={<Signup />} />
+        <Route path="login" element={<Login />} />
+      </Route>
     </Routes>
   );
 }

@@ -29,6 +29,8 @@ import Chart from "../ClientView/Chart";
 import NavBar from "../Navbar/Navbar";
 
 export default function IOTMain() {
+
+
   return (
     <>
       <NavBar className="z-50" />
