@@ -16,7 +16,7 @@ import {
 import { SearchSelect, SearchSelectItem } from "@tremor/react";
 import Chart from "./Chart";
 
-export default function DashboardExample() {
+export default function ClientMain() {
   return (
     <div className=" border p-0 md:p-6 bg-slate-50">
       <div className="md:w-[60%] mx-auto mb-10 space-y-6">
