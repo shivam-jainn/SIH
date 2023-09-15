@@ -18,7 +18,7 @@ const LandingPage = (props) => {
       </nav>
 
       <section className="text-6xl text-[#334155] my-20 mx-auto font-extrabold max-w-[70%] text-center">
-        The all-in-one ecosystem library to{" "}
+        The All-in-One PaaS ecosystem to{" "}
         <span className="text-[#3474EF]">
           <u>optimise constructions</u>
         </span>
