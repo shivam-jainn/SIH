@@ -5,7 +5,7 @@ import Shell from "./components/ClientView/Shell"; // Assuming this path is corr
 
 function App() {
   return (
-    <div className="p-16 ">
+    <div className=" px-2 md:p-16 ">
       <ClientMain />
     </div>
   );
