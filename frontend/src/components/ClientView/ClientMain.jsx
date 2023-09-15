@@ -53,7 +53,7 @@ export default function ClientMain() {
                 </Card>
                 <Card>
                   {/* Placeholder to set height */}
-                  <Title>Attendence:</Title>
+                  <Title>Attendance:</Title>
                   <Attendence />
                 </Card>
               </Grid>
