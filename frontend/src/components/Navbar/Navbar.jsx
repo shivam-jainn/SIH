@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   return (
-    <div className="w-[100%] px-[3%] py-[2%] flex justify-between items-center bg-slate-200 h-[50px] drop-shadow-md sticky top-0 z-50">
-      <div className="logo text-3xl font-light">
-        <Link to="/">BricBoard</Link>
+
+
+
+<div className="w-[100%] px-[3%] py-[2%] bg-white flex justify-between items-center  h-[50px]   top-0 z-50">
+      <div className="logo text-3xl custom-text font-nabla">
+        <Link to="/" className="font-semibold custom-text font-nabla">BricBoard</Link>
       </div>
       <div className="flex items-center justify-evenly gap-10">
         {/* <div id="navLinks">
@@ -33,6 +36,8 @@ const NavBar = (props) => {
         </div>
       </div>
     </div>
+
+
   );
 };
 

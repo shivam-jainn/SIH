@@ -37,7 +37,7 @@ const SignUpForm = () => {
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center">Sign Up</h2>
         <TextInput
           type="email"
           name="email"
