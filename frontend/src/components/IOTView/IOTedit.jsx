@@ -2,7 +2,7 @@ import { Title, Bold, Card, Button, Subtitle } from "@tremor/react";
 import React from "react";
 import { Select, SelectItem } from "@tremor/react";
 
-const IOTinventory = () => {
+const IOTedit = () => {
   return (
     <>
       <main>
@@ -65,4 +65,4 @@ const IOTinventory = () => {
   );
 };
 
-export default IOTinventory;
+export default IOTedit;
