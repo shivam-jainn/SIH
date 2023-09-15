@@ -1,5 +1,7 @@
 import React from "react";
-import { HiOutlineBell, HiOutlineUserCircle } from "react-icons/hi";
+// import { HiOutlineBell, HiOutlineUserCircle } from "react-icons/hi";
+import {BsFillPersonFill} from "react-icons/bs";
+import {AiOutlineBell} from "react-icons/ai";
 
 const NavBar = (props) => {
   return (
@@ -22,10 +24,10 @@ const NavBar = (props) => {
         <div className="flex gap-6 text-3xl 	">
           <a href="">
             {" "}
-            <HiOutlineBell className="hover:scale-125 hover:text-[#4E80EE]" />
+            <AiOutlineBell className="hover:scale-125 hover:text-[#4E80EE]" />
           </a>
           <a href="">
-            <HiOutlineUserCircle className="hover:scale-125 hover:text-[#4E80EE]" />
+            <BsFillPersonFill className="hover:scale-125 hover:text-[#4E80EE]" />
           </a>
         </div>
       </div>
