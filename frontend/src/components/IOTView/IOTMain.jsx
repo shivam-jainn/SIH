@@ -10,7 +10,10 @@ import {
   TabPanels,
 } from "@tremor/react";
 import { Link } from "react-router-dom";
-
+import {BsCloudUpload} from "react-icons/bs";
+import {MdManageSearch} from "react-icons/md";
+// import {MdFindReplace} from "react-icons/md";
+import {BsBoxArrowUpRight} from "react-icons/bs";
 import { RefreshIcon } from "@heroicons/react/outline";
 import {
   Bold,
@@ -59,14 +62,14 @@ export default function IOTMain() {
 
                     <Link to="/iot/iotInventory">
                       <div className="flex flex-col justify-evenly ">
-                        <Button icon={RefreshIcon} className="my-2">
+                        <Button icon={BsCloudUpload} className="my-2">
                           Deploy Data Scripts
                         </Button>
-                        <Button icon={RefreshIcon} className="my-2">
+                        <Button icon={MdManageSearch} className="my-2">
                           Manage Component
                         </Button>
-                        <Button icon={RefreshIcon} className="my-2">
-                          Place issue
+                        <Button icon={BsBoxArrowUpRight} className="my-2">
+                          Post issue
                         </Button>
                       </div>
                     </Link>

@@ -45,6 +45,7 @@ const IOTinventory = () => {
               <Button
                 icon={IoDocumentAttachOutline}
                 className="my-2 transition-shadow hover:shadow-lg hover:bg-green-100 hover:text-green-500"
+                color="green"
               >
                 Attach Component
               </Button>
