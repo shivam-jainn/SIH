@@ -29,9 +29,9 @@ for _ in range(14):  # You can adjust the number of data points as needed
 
     # Define your anomaly detection logic here
     # For example, if machine temperature is above 90, consider it an anomaly
-    temp_anomaly = -1 if machine_temperature > 100 else 1
-    sound_anomaly = -1 if machine_temperature > 90 else 1
-    vibration_anomaly = -1 if machine_temperature > 2 else 1
+    # temp_anomaly = -1 if machine_temperature > 100 else 1
+    # sound_anomaly = -1 if machine_temperature > 90 else 1
+    # vibration_anomaly = -1 if machine_temperature > 2 else 1
 
 
 
@@ -44,14 +44,14 @@ for _ in range(14):  # You can adjust the number of data points as needed
         "Environment_Temperature_C": environment_temperature,
         "Humidity_%": humidity,
         "Humidity_%": humidity,
-        "Temp_Anomaly": temp_anomaly,
-        "Sound_Anomaly": sound_anomaly,
-        "Vibration_Anomaly": vibration_anomaly,
+        # "Temp_Anomaly": temp_anomaly,
+        # "Sound_Anomaly": sound_anomaly,
+        # "Vibration_Anomaly": vibration_anomaly,
     })
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-json_file_path = os.path.join(script_dir, "..", "datasets", "sample_data.json")
+json_file_path = os.path.join(script_dir, "..", "datasets", "data_anom.json")
 
 with open(json_file_path, "w") as json_file:
     json.dump(data, json_file, indent=4)

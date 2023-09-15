@@ -33,9 +33,9 @@ for _ in range(1000):  # You can adjust the number of data points as needed
     humidity = round(random.uniform(30, 60), 2)
 
     # Define conditions for anomalies for each attribute based on the machine's range
-    temp_anomaly = -1 if machine_temperature < temp_range[0] or machine_temperature > temp_range[1] else 1
-    sound_anomaly = -1 if soundwave < sound_range[0] or soundwave > sound_range[1] else 1
-    vibration_anomaly = -1 if vibration < vibration_range[0] or vibration > vibration_range[1] else 1
+    # temp_anomaly = -1 if machine_temperature < temp_range[0] or machine_temperature > temp_range[1] else 1
+    # sound_anomaly = -1 if soundwave < sound_range[0] or soundwave > sound_range[1] else 1
+    # vibration_anomaly = -1 if vibration < vibration_range[0] or vibration > vibration_range[1] else 1
 
     data.append({
         "Machine_ID": machine_id,
@@ -45,15 +45,15 @@ for _ in range(1000):  # You can adjust the number of data points as needed
         "Vibration_mm/s^2": vibration,
         "Environment_Temperature_C": environment_temperature,
         "Humidity_%": humidity,
-        "Temp_Anomaly": temp_anomaly,
-        "Sound_Anomaly": sound_anomaly,
-        "Vibration_Anomaly": vibration_anomaly,
+        # "Temp_Anomaly": temp_anomaly,
+        # "Sound_Anomaly": sound_anomaly,
+        # "Vibration_Anomaly": vibration_anomaly,
     })
 
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-json_file_path = os.path.join(script_dir, "..", "datasets", "machine_environment_data.json")
+json_file_path = os.path.join(script_dir, "..", "datasets", "machine_data_noanomaly.json")
 
 with open(json_file_path, "w") as json_file:
     json.dump(data, json_file, indent=4)
