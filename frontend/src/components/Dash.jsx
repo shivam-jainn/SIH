@@ -22,7 +22,7 @@ const Dash = () => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % machineStats.length);
             fetchData(); // Fetch new data on each interval
-        }, 5000);
+        }, 3000);
 
         return () => {
             clearInterval(interval); // Clear the interval when the component unmounts
