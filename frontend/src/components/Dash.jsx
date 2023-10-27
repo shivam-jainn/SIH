@@ -1,37 +1,47 @@
 import React, { useEffect, useState } from 'react';
-import io from 'socket.io-client';
 
 const Dash = () => {
-    const [machineStats, setMachineStats] = useState({
-        temperature: 0,
-        vibration: 0,
-        soundWaves: 0,
-        humidity: 0,
-        surroundingTemperature: 0,
-    });
+    const [machineStats, setMachineStats] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        const socket = io('http://localhost:3001'); // Adjust the URL to match your server
+        const fetchData = async () => {
+            try {
+                const response = await fetch('/data.json'); // Assuming the JSON file is in your public directory
+                const data = await response.json();
+                setMachineStats(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
 
-        socket.on('machine-stats', (data) => {
-            setMachineStats(data);
-        });
+        // Set up an interval to refresh data every 5 seconds
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % machineStats.length);
+        }, 3000);
+
+        // Fetch data initially and clear the interval when the component unmounts
+        fetchData();
 
         return () => {
-            socket.disconnect();
+            clearInterval(interval);
         };
     }, []);
 
     return (
         <div>
             <h1>Machine Statistics</h1>
-            <ul>
-                <li>Temperature: {machineStats.temperature} °C</li>
-                <li>Vibration: {machineStats.vibration}</li>
-                <li>Sound Waves: {machineStats.soundWaves}</li>
-                <li>Humidity: {machineStats.humidity}%</li>
-                <li>Surrounding Temperature: {machineStats.surroundingTemperature} °C</li>
-            </ul>
+            {machineStats.length > 0 && (
+                <ul>
+                    <li>Machine ID: {machineStats[currentIndex].Machine_ID}</li>
+                    <li>Timestamp: {machineStats[currentIndex].Timestamp}</li>
+                    <li>Temperature: {machineStats[currentIndex].Machine_Temperature_C} °C</li>
+                    <li>Sound Waves: {machineStats[currentIndex].Soundwave_dB}</li>
+                    <li>Vibration: {machineStats[currentIndex]['Vibration_mm/s^2']}</li>
+                    <li>Environment Temperature: {machineStats[currentIndex].Environment_Temperature_C} °C</li>
+                    <li>Humidity: {machineStats[currentIndex]['Humidity_%']}%</li>
+                </ul>
+            )}
         </div>
     );
 };
