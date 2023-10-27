@@ -15,16 +15,17 @@ const Dash = () => {
             }
         };
 
+        // Fetch data initially
+        fetchData();
+
         // Set up an interval to refresh data every 5 seconds
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % machineStats.length);
-        }, 3000);
-
-        // Fetch data initially and clear the interval when the component unmounts
-        fetchData();
+            fetchData(); // Fetch new data on each interval
+        }, 5000);
 
         return () => {
-            clearInterval(interval);
+            clearInterval(interval); // Clear the interval when the component unmounts
         };
     }, []);
 
